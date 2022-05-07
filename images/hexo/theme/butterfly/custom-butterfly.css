@@ -1,0 +1,194 @@
+:root {
+  --global-font-size: 14px;
+  --global-bg: #fff;
+  --font-color: #4c4948;
+  --hr-border: #a4d8fa;
+  --hr-before-color: #80c8f8;
+  --search-bg: #f6f8fa;
+  --search-input-color: #4c4948;
+  --search-result-title: #4c4948;
+  --preloader-bg: #37474f;
+  --preloader-color: #fff;
+  --tab-border-color: #f0f0f0;
+  --tab-botton-bg: #f0f0f0;
+  --tab-botton-color: #1f2d3d;
+  --tab-button-hover-bg: #dcdcdc;
+  --tab-button-active-bg: #fff;
+  --card-bg: #fff;
+  --sidebar-bg: #f6f8fa;
+  --btn-hover-color: #ff7242;
+  --btn-color: #fff;
+  --btn-bg: #49b1f5;
+  --text-bg-hover: rgba(73,177,245,0.7);
+  --light-grey: #eee;
+  --dark-grey: #cacaca;
+  --white: #fff;
+  --text-highlight-color: #1f2d3d;
+  --blockquote-color: #6a737d;
+  --blockquote-bg: rgba(73,177,245,0.1);
+  --reward-pop: #f5f5f5;
+  --toc-link-color: #666261;
+  --card-box-shadow: 0 3px 8px 6px rgba(7,17,27,0.05);
+  --card-hover-box-shadow: 0 3px 8px 6px rgba(7,17,27,0.09);
+  --pseudo-hover: #ff7242;
+  --headline-presudo: #a0a0a0;
+  --scrollbar-color: #49b1f5;
+}
+
+:root{/*修改默认主题配置*/
+  --global-font-size: 16px;
+  --global-bg: #f5f7fc;
+  --card-box-shadow: 0 0 1px 1px rgba(225, 225, 225, 1.0);
+  --card-hover-box-shadow:0 0 1px 1px rgba(225, 225, 225, 1.0);
+  --scrollbar-color: #a0a0a0;
+  
+  --heo-theme: #49b1f5;     /*md文件模板反引号字体颜色*/
+  --heo-theme-op:none;   /*md文件模板反引号文本背景颜色*/
+}
+
+:root{/*新增全局配置*/
+  --toc-link-active:#ff7242;
+}
+
+#scroll-down{ /*首页点击下滑箭头隐藏*/
+  display: none; 
+}
+
+.layout#content-inner{ /*最大宽度1500*/
+  max-width: 1500px;
+  display: flex;
+}
+.layout > div:first-child{ /*左侧宽度*/
+  flex: 1;
+}
+@media screen and (min-width: 1300px) { /*侧边栏宽度*/
+  #aside-content {
+      max-width: 300px;
+      min-width: 300px;
+  }
+}
+
+#page-header.full_page, 
+#page-header.post-bg, 
+#page-header.not-home-page{ /*首页header和文章页header*/
+  height: 300px;
+}
+
+#page-header.full_page{ /*因为#page-header的contain，首页图片需要单独处理*/
+  background-attachment: unset;
+  background-size: unset;
+  background-position: 50% 50%;
+}
+
+h1, h2, h3, h4, h5, h6{
+  color: var(--toc-link-active);
+}
+#aside-content #card-toc .toc-content .toc-link.active /*当前激活目录样式*/{
+  background: var(--toc-link-active);
+}
+#aside-content #card-toc .toc-content li .toc-link/*目录标题过长，显示省略号*/{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#aside-content #card-toc .toc-content:not(.is-expand) .toc-child/*子目录一直显示不隐藏*/{
+  display: block;
+}
+
+#aside-content #card-toc .toc-content > * > .toc-item.toc-level-2{
+  /*一级目录外框样式*/
+  /* border-radius: 8px;
+  border: 1px solid #c6c6c6;
+  padding: 0 4px 4px 4px; */
+}
+#aside-content #card-toc .toc-content > * > .toc-item > .toc-child{
+  /*二级目录外框样式*/
+  /* border: 1px solid #c6c6c6;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 0 4px; */
+}
+
+
+#footer /*页脚footer背景*/{ 
+  background: transparent;
+}
+
+#footer-wrap /*页脚文本颜色*/{ 
+  color: #999999;
+}
+
+#footer-wrap a/*页脚链接颜色*/{ 
+  color: #00ACED;
+}
+
+/*●butterfly主题--公告模块●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●*/
+#aside-content .card-announcement .item-headline i:before{ /*公告图标*/
+  /* content: "\f0a1"; */
+}
+
+#aside-content .card-announcement .item-headline i /*公告图标颜色*/{ 
+  color: inherit;
+}
+
+/*●butterfly主题--个别模块全局样式●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●*/
+#recent-posts > .recent-post-item .post_cover, /*首页选项卡图片背景*/
+#pagination .prev-post,#pagination .next-post,/*文章页上一页下一页容器背景*/
+.relatedPosts > .relatedPosts-list > div /*文章页，相关推荐，item的背景设置*/ { 
+  background: linear-gradient(-45deg, #eee4df, #cec1c7, #c3ced5, #cad5d0);
+}
+
+#article-container code { /*文章内容样式：单反引号，代码块*/
+    color: var(--heo-theme);/*#425aef*/
+    padding: 0;
+    border-radius: 8px;
+    background: var(--heo-theme-op);
+    margin: 0 2px;
+}
+#article-container img/*文章内容样式：图片*/{
+  margin: 0;
+  border: 10px solid #eaeaea;
+}
+
+/*●butterfly主题--其他配置●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●*/
+*::selection { /*文本选择样式*/
+  background: #c4853c;
+  color: #f7f7f7;
+}
+
+*::-webkit-scrollbar-thumb {/*滚动条样式*/
+    background: var(--scrollbar-color);
+    border-radius: 4px;
+}
+
+/*●butterfly主题--隐藏元素●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●*/
+.toc-content .toc .toc-item .toc-number, /*文章页目录，不显示序号*/
+#aside-content .card-announcement,/*文章页公告板块*/
+.post-copyright .post-copyright__author .post-copyright-meta,
+.post-copyright .post-copyright__notice .post-copyright-meta,
+.post-copyright .post-copyright__type .post-copyright-meta
+{
+  display: none;
+}
+
+#post .post-copyright{
+  background-color: #000000;
+  color: #FFF;
+  border-radius: 8px;
+  font-weight: bold;
+}
+#post .post-copyright .post-copyright-info a{
+  text-decoration: none;
+}
+#post .post-copyright .post-copyright__notice{
+  font-size: 14px;
+}
+
+/*Twikoo*/
+/* .el-input-group--prepend:first-child .el-input-group__prepend:after{
+  content: "(QQ)";
+} */
+
+
